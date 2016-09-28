@@ -44,12 +44,12 @@
 <li>The model generates real looking images from the dataset not necessarily imposed that the timestep should be accurate</li>
 </ul>
 
-<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model.png" width="500px" height="440px"></p>
-
 <h2>
 <a id="contextual-rnn-gan" class="anchor" href="#contextual-rnn-gan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contextual RNN-GAN</h2>
 
-<p>Contextual RNN-GAN incorporates context for the timestep as the image(correct) previous timestep and this is incorporated into the discriminator(as an RNN which gets all the preceding images to decide whether correct image for the timestep) to tell whether the generated image is the correct image for the particular timestep</p>
+<p>Contextual RNN-GAN incorporates context for the timestep as all the preceding images prior to the current timestep. The discriminator is modeled as an RNN which gets all the preceding images to decide whether correct image for the timestep. </p>
+
+<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model.png" width="500px" height="440px"></p>
 
 <ul>
 <li>The model generates real looking images to generate images accurate according to the particular timestep</li>
