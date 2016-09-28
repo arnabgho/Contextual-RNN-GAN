@@ -49,9 +49,11 @@
 
 <p>Contextual RNN-GAN incorporates context for the timestep as it uses all the preceding images prior to the current timestep. 
 <p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model.png" width="500px" height="440px" style="float:right"></p>
-Here both generator and discriminator are modeled as RNN. Hence discriminator gets all the preceding images to decide the correct image for the timestep. </p>
+Here both generator and discriminator are modeled as RNN.</p>
 <ul>
-<li>The model generates real looking images to generate images accurately according to the particular timestep</li>
+  <li>The discriminator gets all the preceding images to decide whether the given image really follows the image sequence till current timestep.</li>
+  <li>The generator gets all the preceding images to generate image such that it seems realistic enough to fool discriminator.</li>
+  <li>The model generates real looking images to generate images accurately according to the particular timestep</li>
 </ul>
 
 <h2>
