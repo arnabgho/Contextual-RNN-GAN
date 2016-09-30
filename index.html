@@ -58,10 +58,10 @@
 <a id="contextual-rnn-gan-1" class="anchor" href="#contextual-rnn-gan-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contextual RNN-GAN</h2>
 
 <ul>
-<li><p>GANs have been showed to be useful in several image generation and manipulation tasks and hence it was a natural choice to combat the model making fuzzy generations.</p></li>
+<li><p>GANs have been shown to be useful in several image generation and manipulation tasks and hence it was a natural choice to prevent the model make fuzzy generations.</p></li>
 <li><p>In Context-RNN-GAN, 'context' refers to the adversary receiving previous images (modeled as an RNN) and the generator is also an RNN. The name distinguishes it from our simpler RNN GAN model where the adversary is not contextual (as it only uses a single image) and only the generator is an RNN.</p></li>
-<li><p>The discriminator is modeled as a GRU-RNN which gets all the preceding images to decide whether the generation by the Generator is a correct image for the timestep. </p></li>
-<li><p>The generator is modeled as a GRU-RNN which tries to generate an image using the preceding images to produce a real looking image for the particular timestep and guided by the contextual discriminator to produce better looking images.</p></li>
+<li><p>The discriminator is modeled as a GRU-RNN which gets all the preceding images to decide whether the generation by the Generator is the correct image for the timestep. </p></li>
+<li><p>The generator is modeled as a GRU-RNN which tries to generate an image using the preceding images. It is guided by the contextual discriminator to produce real looking images.</p></li>
 </ul>
 
 <p style="text-align:center;"><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model.png"></p>
@@ -136,7 +136,7 @@
   </tr>
 </table>
 <p>Context-RNN-GAN with features obtained from Siamese CNN is competitive with humans in 10th grade in the sense that it is able to achieve accuracy of 35.4% when the generated features are compared with the features obtained from actual answer images.
-It needs to be noted that humans can see the options to get the best possible overall sequence of six images and hence can select the best choice while our model is just comparing the generations (obtained using sequence of five images in the problem) with options to get the best option. So, we can say that our model is very good generator and comparable to even 10th grade humans. An interesting aspect is that the model is never trained on the correct answers , it is just trained on multiple sequences from the problem images and still performs remarkably well.
+It needs to be noted that humans can see the options to get the best possible overall sequence of six images and hence can select the best choice while our model is just comparing the generations (obtained using sequence of five images in the problem) with options to get the best option. So, we can say that our model is very good generator and comparable to even 10th grade humans. An interesting aspect is that the model is never trained on the correct answers, it is just trained on multiple sequences from the problem images and still performs remarkably well.
 </p>
 
 <hr>
