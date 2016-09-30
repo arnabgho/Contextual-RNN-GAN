@@ -36,7 +36,7 @@
 <h2>
 <a id="an-example-with-an-explanation" class="anchor" href="#an-example-with-an-explanation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>An Example with an Explanation</h2>
 
-<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-6.png" width="450px" height="220px"></p>
+<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-6.png" width="850px" height="220px"></p>
 
 <p>An explanation of the ground truth is that the dashed line first goes to the left, then to the right, and then on both sides, and also changes from single to double, hence the ground truth should have double dashed lines on both the sides. On the corners, the number of slanted lines increase by one after every two images, hence the ground truth should have four slant lines on both the corners.</p>
 
@@ -56,15 +56,11 @@
 <ul>
 <li><p>GANs have been showed to be useful in several image generation and manipulation tasks and hence it was a natural choice to combat the model making fuzzy generations.</p></li>
 <li><p>Contextual RNN-GAN incorporates context for the timestep as all the preceding images prior to the current timestep.  </p></li>
-<li><p>The discriminator is modeled as a GRU-RNN which gets all the preceding images to decide whether correct image for the timestep. </p></li>
-<li><p>The generator is modeled as a GRU-RNN which tries to generate an image using the preceding images to produce a real looking image for the particular timestep.</p></li>
+<li><p>The discriminator is modeled as a GRU-RNN which gets all the preceding images to decide whether the generation by the Generator is a correct image for the timestep. </p></li>
+<li><p>The generator is modeled as a GRU-RNN which tries to generate an image using the preceding images to produce a real looking image for the particular timestep and guided by the contextual discriminator to produce better looking images.</p></li>
 </ul>
 
 <p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model.png" width="500px" height="440px"></p>
-
-<ul>
-<li>The model generates real looking images accurate according to the particular timestep.</li>
-</ul>
 
 <h2>
 <a id="impact-of-adversarial-loss-" class="anchor" href="#impact-of-adversarial-loss-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Impact of Adversarial Loss </h2>
@@ -79,7 +75,7 @@
 <h2>
 <a id="some-generations-contextual-rnn-gan" class="anchor" href="#some-generations-contextual-rnn-gan" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Some Generations (Contextual-RNN-GAN)</h2>
 
-<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-7.png" width="900px" height="440px"></p>
+<p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-7.png" width="900px" height="340px"></p>
 
 <hr>
 
@@ -89,6 +85,8 @@
 <p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-4.png" width="900px" height="440px"></p>
 
 <p><img src="https://arnabgho.github.io/Contextual-RNN-GAN/images/RNN-GAN%20model-5.png" width="900px" height="440px"></p>
+
+<hr>
 
 <h2>
 <a id="interesting-cases" class="anchor" href="#interesting-cases" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Interesting Cases</h2>
@@ -100,6 +98,8 @@
 <li><p><strong>Second Generation</strong> Second example shows an interesting case whereby the image gen- erated by our model is also plausible (if by symmetry it is considered that first and third the semicircular ring is solid and hence fourth and sixth should be solid) while the actual answer is of course plausible according to the reasoning that the (solid vs hollow) flipped in the first two cases then stayed the same for the next two timesteps. Even more interesting is its analysis of the spatial dynamics of the ball and the semicircular ring which it almost correctly captured.</p></li>
 <li><p><strong>Third Generation</strong> Another very interesting case is the generation which it gets correct. However, in this case the answer figure is exactly similar to the second figure in the se- quence. Therefore, it is not illustrative of the ability of the model to generate the sequence of the pattern.</p></li>
 </ul>
+
+<hr>
 
 <h2>
 <a id="application-of-the-model-to-moving-mnist" class="anchor" href="#application-of-the-model-to-moving-mnist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Application of the model to Moving-MNIST</h2>
